@@ -1,0 +1,133 @@
+/**
+	 * change la valeur "NOMBRE" de CUVEE dans le fichier cave.xml
+	 * @param id 
+	 * @param nombre : positif dans le cas de 
+	 * l'ajout de bouteille et négatif lors de 
+	 * la validation d'une commande
+	 * @return 	1, si OK 
+	 * 			2, si aucune cuvée avec cet identifiant existe
+	 * 			3, si plus d'une cuvée a été trouvée avec le même identifiant			
+	 * 			négatif, si on retire plus de bouteilles que dispo dans le stock
+	 * 					 le chiffre retourné indiquant le nombre de bouteilles demandées en trop
+	 */		
+	public static int modifBouteille(String id, int nombre){
+		
+		ServiceXML x = new ServiceXML("CAVE");
+		int error = 1; 
+		List results;
+		JDOMXPath xpath;
+		String fichier = new String("cave.xml");//A MODIF
+		
+		try {
+			x.lireFichier(fichier);
+			xpath = new JDOMXPath("//CUVEE[@id='"+id+"']/NOMBRE");
+			results = xpath.selectNodes(x.document);
+			Iterator resultIter = results.iterator();
+			if (results.size() == 0) error = 2;
+			else if (results.size()> 1) error = 3;
+			else{ 
+				Element el = (Element)resultIter.next();
+				int nbActuel = (new Integer(el.getText())).intValue();
+				if ((nombre + nbActuel) < 0) {
+					error = nombre + nbActuel;
+				}
+				else {
+					String newValue = new Integer(nbActuel + nombre).toString();
+					el.setText(newValue);
+					XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
+					sortie.output(x.document, new FileOutputStream(fichier));
+					if ((nombre + nbActuel)==0) {
+						if (chateauVide(x,id))
+							supprChateau(x,id);
+					}
+				}
+			}	
+		}
+		catch (Exception e) {
+			System.out.println("err "+e);
+			e.printStackTrace();
+		}
+		return error;
+	}
+	
+	
+	/**
+	 * Renvoie true si le chateau qui propose la cuvée d'identifiant
+	 * idCuvee n'a plus une seule cuvée dont le stock est 
+	 * supérieur à zéro. Dans ce cas là, on supprime le
+	 * chateau à l'aide de la fonction supprChateau.
+	 * @param x : ServiceXML
+	 * @param idCuvee
+	 * @return
+	 */
+	public static boolean chateauVide(ServiceXML x, String idCuvee ){
+		
+		JDOMXPath xpath;
+		List results;
+		boolean vide = true;
+		try {
+			xpath = new JDOMXPath("//CUVEE[@id='" + idCuvee + "']/ancestor::CHATEAU/BOUTEILLE/CUVEE/NOMBRE");
+			results = xpath.selectNodes(x.document);
+			Iterator resultIter = results.iterator();
+			while (resultIter.hasNext()){
+				if (!((Element) resultIter.next()).getText().equals("0")) vide = false;
+			}
+		} catch (JaxenException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return vide;
+	}
+	
+	/**
+	 * Supprime le chateau qui propose la cuvée d'identifiant idCuvee
+	 * @param x : instance de ServiceXML
+	 * @param idCuvee
+	 */
+	public static void supprChateau(ServiceXML x, String idCuvee ){
+		
+		JDOMXPath xpath;
+		List results;
+		boolean trouve = false;
+		Element eltChateau, eltAppellation;
+		Iterator resultIter;
+		String strIdChateau;
+		
+		try {
+			
+			//récupération de l'identifiant du chateau
+			xpath = new JDOMXPath("//CUVEE[@id='" + idCuvee + "']/ancestor::CHATEAU");
+			results = xpath.selectNodes(x.document);
+			resultIter = results.iterator();
+			strIdChateau=((Element)resultIter.next()).getAttributeValue("id");
+			
+			//récupération du noeud appellation contenant le chateau recherché
+			xpath = new JDOMXPath("//CHATEAU[@id='" + strIdChateau + "']/ancestor::APPELLATION");
+			results = xpath.selectNodes(x.document);
+			resultIter = results.iterator();
+			List chateaux;
+			eltAppellation = (Element)resultIter.next();
+			chateaux = eltAppellation.getChildren();
+			Iterator resultIterChateaux = chateaux.iterator();
+			resultIterChateaux.next();//pour ignorer la balise <NOM_APPELLATION>
+			System.out.println(trouve);
+			//recherche et suppression du chateau parmi les chateaux de l'appellation
+			while (!trouve && resultIterChateaux.hasNext()){
+				eltChateau = ((Element)resultIterChateaux.next());
+				System.out.println("fdsq " + strIdChateau);
+				if (eltChateau.getAttributeValue("id").equals(strIdChateau)){
+					trouve = true;
+					eltAppellation.removeContent(eltChateau);
+					try {
+						x.enregistre("cave.xml");//A MODIF
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				}
+			}
+		}
+		catch (JaxenException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}

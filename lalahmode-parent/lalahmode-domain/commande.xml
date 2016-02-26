@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href=""?>
+<!DOCTYPE LISTE_COMMANDES SYSTEM "commande.dtd">
+<LISTE_COMMANDES>
+	<COMMANDE id="1">
+		<CLIENT>toto</CLIENT>
+		<DATE>23/03/2006</DATE>
+		<CUVEE id="1">
+                    <NOMBRE>10</NOMBRE>
+		</CUVEE>
+		<CUVEE id="10">
+                    <NOMBRE>15</NOMBRE>
+		</CUVEE>
+		<DATE_VALID>00/00/0000</DATE_VALID>
+	</COMMANDE>
+	<COMMANDE id="2">
+		<CLIENT>toto</CLIENT>
+		<DATE>23/03/2006</DATE>
+		<CUVEE id="7">
+                    <NOMBRE>3</NOMBRE>
+		</CUVEE>
+		<DATE_VALID>23/03/2006</DATE_VALID>
+	</COMMANDE>
+</LISTE_COMMANDES>
