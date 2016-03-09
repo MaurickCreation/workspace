@@ -37,15 +37,22 @@ public class ServiceUtilisateur {
 
 	public boolean isLoginDispo(String login) {
 
-		if (this.getUtilisateurByLogin(login).isEmpty())
+		if (this.getUtilisateurByLogin(login).isEmpty()){
+			
+		
+			 System.out.println("Je suis dans le true");
 			return true;
-		else
+		}
+		else {
+			 System.out.println("Je suis dans le false");
 			return false;
+		}
+		
 
 	}
 	
 	public boolean authentification (String login, String mdp){
-		return false;
+		return true;
 	}
 
 }

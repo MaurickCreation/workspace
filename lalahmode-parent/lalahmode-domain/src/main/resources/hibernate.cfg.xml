@@ -3,7 +3,7 @@
 		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 		"http://www.hibernate.org/dtd/hibernate-configuration.dtd">
 <hibernate-configuration>
-    <session-factory>
+    <session-factory >
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost/lalahmode</property>
         <property name="hibernate.connection.username">lalahmode</property>
