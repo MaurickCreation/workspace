@@ -3,7 +3,7 @@
 <jsp:include page="header.jsp"/>
 
 <% 
-ServiceUtilisateur serviceUtilisateur = new ServiceUtilisateur();
+ServiceUtilisateur serviceUtilisateur = ServiceUtilisateur.getInstance();
 
 if (request.getParameter("action").equals("connexion")) {
 	String login = request.getParameter("c_login");
@@ -31,9 +31,10 @@ else {
 		String tel = request.getParameter("i_tel");
 		
 
-		   if (!serviceUtilisateur.isLoginDispo(login)) {
+		   if (serviceUtilisateur.isLoginDispo(login)) {
 				try {
 					serviceUtilisateur.creerUtilisateur(login, mdp, nom, prenom, tel, adresse);
+					System.out.println("je peux cree"+login);
 				}
 				catch (Exception e) {
 						System.out.println("err "+e);
