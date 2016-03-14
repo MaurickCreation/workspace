@@ -5,14 +5,22 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import antlr.StringUtils;
 import util.HibernateUtil;
 import dao.DaoUtilisateur;
 import donnees.Utilisateur;
 
 public class ServiceUtilisateur {
 
-	public ServiceUtilisateur() {
+	private ServiceUtilisateur() {
 
+	}
+	
+	/** Instance unique pré-initialisée */
+	private static ServiceUtilisateur INSTANCE = new ServiceUtilisateur();
+	
+	public static ServiceUtilisateur getInstance()
+	{	return INSTANCE;
 	}
 
 	public void creerUtilisateur(String login, String mdp, String nom,
@@ -37,15 +45,40 @@ public class ServiceUtilisateur {
 
 	public boolean isLoginDispo(String login) {
 
-		if (this.getUtilisateurByLogin(login).isEmpty())
+		if (this.getUtilisateurByLogin(login).isEmpty()){
+		
 			return true;
-		else
+		}
+		else {
+		
 			return false;
+		}
+		
 
 	}
 	
 	public boolean authentification (String login, String mdp){
-		return false;
+		
+		boolean authentifie  =false;
+		List<Utilisateur> test = this.getUtilisateurByLogin(login);
+		for (Utilisateur userTest : test){
+			if ( !login.isEmpty() && !mdp.isEmpty()) {
+				
+				if (login.equals(userTest.getLogin()) && mdp.equals(userTest.getMdp() ))
+						{
+					
+					
+					 System.out.println("Je suis dans le true");
+					authentifie = true;
+					break;
+						}
+				
+				
+			}
+				
+		}
+		 System.out.println("Jvaleur de authentifie" + authentifie);
+		return authentifie;
 	}
 
 }
