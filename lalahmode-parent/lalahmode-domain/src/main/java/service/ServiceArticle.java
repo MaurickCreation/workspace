@@ -12,6 +12,13 @@ public class ServiceArticle {
 		
 	}
 	
+	/** Instance unique pré-initialisée */
+	private static ServiceArticle INSTANCE = new ServiceArticle();
+	
+	public static ServiceArticle getInstance()
+	{	return INSTANCE;
+	}
+	
 	
 
 	public void creerArticle (String codeArt, String libelle,

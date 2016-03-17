@@ -1,16 +1,16 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-<%@page import="xml.XPath" %>
 <%@page import="donnees.*" %>
 <%@page import="java.util.*" %>
+<%@page import="donnees.Article"%>
+<%@page import="service.ServiceArticle"%>
 <jsp:include page="header.jsp"/>
 
 <% //récupération des paramètres
 
-String idArticle = request.getParameter("appellation");
+String code = request.getParameter("code");
 
-String idDep = request.getParameter("dep");
-String idChateau = request.getParameter("chateau");
+String libelle = request.getParameter("libelle");
 
 //recherche de la liste des bouteilles
 
@@ -20,31 +20,20 @@ String idChateau = request.getParameter("chateau");
 	<p><img width="400" heigth="350" src="../common/images/SA400013.JPG" /></p>
 
         <form name="form1" method="post" action="commande.jsp">
-            Article : <select name="appellation" size="1">
+            Article : <select name="code" size="1">
             <option valid="vide"></option>
-            <%  XPath serv = new XPath();
-            //Article ap = new Article();
-                List appellation = (new Article()).getListArticle();
-                //appellation = XPath.comboArticle();
-                for(int i = 0; i < appellation.size(); i++){
-                    Article tempA = (Article)appellation.get(i);
-                    out.println("<option value='a" + tempA.getId() + "'>" + tempA.getNomArticle() + "</option>");
+            <%  ServiceArticle serviceArticle = ServiceArticle.getInstance();
+           
+                List<Article> articles = serviceArticle.listerArticles();
+ 
+                for(Article tempA : articles){
+                
+                    out.println("<option value=" + tempA.getCodeArt() + "'>" + tempA.getLibelle() + "</option>");
                     
-                    List chateau = (new Chateau()).getListChateau(tempA.getId());
-                    for(int j = 0; j < chateau.size(); j++){
-                        Chateau tempC = (Chateau)chateau.get(j);
-                        out.println("<option value='c" + tempC.getId() + "'>&nbsp;&nbsp;&nbsp;" + tempC.getNomChateau() + "</option>");
-                    }
+                    
                 }
             %>
-            </select>&nbsp;&nbsp;&nbsp;&nbsp;
-            Département : <select name="dep" size="1">
-                <%  List dep = (new Chateau()).getListDepartement();
-                for(int i = 0; i < dep.size(); i++){
-                    out.println("<option value='" + dep.get(i) + "'>" + dep.get(i) + "</option>");
-                }
-            %>
-            </select><br />
+           
             <input type="submit" value="Rechercher" name="valid" />
         </form><br />
 
@@ -79,54 +68,7 @@ String idChateau = request.getParameter("chateau");
                     <td>2000</td>
                     <td><input type="text" name="qtt2" size="3" maxlength="3" /></td>
                 </tr>
-                 <tr>
-                    <td>Médoc</td>
-                    <td>Chateau toto</td>
-                    <td>33</td>
-                    <td>Supérieur</td>
-                    <td>500</td>
-                    <td><input type="text" name="qtt1" size="3" maxlength="3" /></td>
-                </tr>
-                <tr>
-                    <td>Médoc</td>
-                    <td>Chateau tata</td>
-                    <td>33</td>
-                    <td>Cubi</td>
-                    <td>2000</td>
-                    <td><input type="text" name="qtt2" size="3" maxlength="3" /></td>
-                </tr>
-                 <tr>
-                    <td>Médoc</td>
-                    <td>Chateau toto</td>
-                    <td>33</td>
-                    <td>Supérieur</td>
-                    <td>500</td>
-                    <td><input type="text" name="qtt1" size="3" maxlength="3" /></td>
-                </tr>
-                <tr>
-                    <td>Médoc</td>
-                    <td>Chateau tata</td>
-                    <td>33</td>
-                    <td>Cubi</td>
-                    <td>2000</td>
-                    <td><input type="text" name="qtt2" size="3" maxlength="3" /></td>
-                </tr>
-                 <tr>
-                    <td>Médoc</td>
-                    <td>Chateau toto</td>
-                    <td>33</td>
-                    <td>Supérieur</td>
-                    <td>500</td>
-                    <td><input type="text" name="qtt1" size="3" maxlength="3" /></td>
-                </tr>
-                <tr>
-                    <td>Médoc</td>
-                    <td>Chateau tata</td>
-                    <td>33</td>
-                    <td>Cubi</td>
-                    <td>2000</td>
-                    <td><input type="text" name="qtt2" size="3" maxlength="3" /></td>
-                </tr>
+          
                 </tbody>
             </table>
             </div>
