@@ -13,7 +13,7 @@ public class TestServiceUtilisateur extends TestCase{
 		
 		
 		 
-		 ServiceUtilisateur serviceUtilisateur = new ServiceUtilisateur();
+		 ServiceUtilisateur serviceUtilisateur = ServiceUtilisateur.getInstance();
 		 
 		 String login = String.valueOf("logintest");
 		 String mdp = String.valueOf("mdptest");
@@ -27,7 +27,7 @@ public class TestServiceUtilisateur extends TestCase{
 	}
 	
 	public void testgetUtilisateurByLogin(){
-		ServiceUtilisateur serviceUtilisateur = new ServiceUtilisateur();
+		ServiceUtilisateur serviceUtilisateur = ServiceUtilisateur.getInstance();
 		
 		String login = String.valueOf("logintest");
 		 
@@ -39,7 +39,7 @@ public class TestServiceUtilisateur extends TestCase{
 		
 		
 		 
-		 ServiceUtilisateur serviceUtilisateur = new ServiceUtilisateur();
+		 ServiceUtilisateur serviceUtilisateur = ServiceUtilisateur.getInstance();
 		 
 		 String login = String.valueOf("logintest");
 		 
@@ -53,7 +53,7 @@ public class TestServiceUtilisateur extends TestCase{
 		
 		
 		 
-		 ServiceUtilisateur serviceUtilisateur = new ServiceUtilisateur();
+		 ServiceUtilisateur serviceUtilisateur = ServiceUtilisateur.getInstance();
 		 
 		 String login = String.valueOf("loginNotexist");
 		 
