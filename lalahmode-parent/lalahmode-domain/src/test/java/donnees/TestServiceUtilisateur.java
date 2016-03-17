@@ -40,6 +40,8 @@ public class TestServiceUtilisateur extends TestCase{
 		
 		 
 		 ServiceUtilisateur serviceUtilisateur = ServiceUtilisateur.getInstance();
+
+		 
 		 String login = String.valueOf("logintest");
 		 
 		 boolean resultatTest = serviceUtilisateur.isLoginDispo(login);
