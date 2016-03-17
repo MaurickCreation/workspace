@@ -3,7 +3,7 @@
 <form action="ajout.jsp" method="post" name="form10">
 <table>
 <tr>
-<td> Nom de la bouteille</td>
+<td> code l'article</td>
 <td><input type="text" value=""/></td>
 </tr>
 <tr>

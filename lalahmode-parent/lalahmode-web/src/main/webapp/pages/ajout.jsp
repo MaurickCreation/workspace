@@ -1,51 +1,40 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-<%@page import="xml.XPath" %>
 <%@page import="java.util.*" %>
 <%@page import="donnees.*" %>
+<%@page import="donnees.Article"%>
+<%@page import="service.ServiceArticle"%>
 <jsp:include page="header.jsp"/>
 
 <% //récupération des paramètres
 
-String idAppellation = request.getParameter("appellation");
-String nb = request.getParameter("cuvee");
-String idChateau = request.getParameter("chateau");
+String code = request.getParameter("code");
+
+String libelle = request.getParameter("libelle");
 
 //recherche de la liste des bouteilles
 
 %>
 
-<% String titre="Gestiond'une cave / Ajout de bouteilles"; %>
+<% String titre="Gestiond''un catalogue / Ajout de nouvel article"; %>
 
   <div class="fullcolumn">
-<h1>Ajouter des bouteilles</h1><br />
+<h1>Ajouter des produits</h1><br />
 <form name="form1" method="post" action="ajout.jsp">
- Appellation : <select name="appellation" size="1">
+  Article : <select name="code" size="1">
             <option valid="vide"></option>
-      <%  XPath serv = new XPath();
-            //Appellation ap = new Appellation();
-                List appellation = (new Appellation()).getListAppellation();
-                //appellation = XPath.comboAppellation();
-                for(int i = 0; i < appellation.size(); i++){
-                    Appellation tempA = (Appellation)appellation.get(i);
-                    out.println("<option value='a" + tempA.getId() + "'>" + tempA.getNomAppellation() + "</option>");
+            <%  ServiceArticle serviceArticle = ServiceArticle.getInstance();
+           
+                List<Article> articles = serviceArticle.listerArticles();
+ 
+                for(Article tempA : articles){
+                
+                    out.println("<option value=" + tempA.getCodeArt() + "'>" + tempA.getLibelle() + "</option>");
                     
-                    List chateau = (new Chateau()).getListChateau(tempA.getId());
-                    for(int j = 0; j < chateau.size(); j++){
-                        Chateau tempC = (Chateau)chateau.get(j);
-                        out.println("<option value='c" + tempC.getId() + "'>&nbsp;&nbsp;&nbsp;" + tempC.getNomChateau() + "</option>");
-                    }
+                    
                 }
             %>
-      </select>&nbsp;&nbsp;&nbsp;&nbsp;
-            Département : <select name="dep" size="1">
-                <%  List dep = (new Chateau()).getListDepartement();
-                for(int i = 0; i < dep.size(); i++){
-                    out.println("<option value='" + dep.get(i) + "'>" + dep.get(i) + "</option>");
-                }
-            %>
-            </select><br />
-     Nb bouteilles &lt; <input type="text" name="cuvee" size="4" maxlength="4" />
+     Nb Articles &lt; <input type="text" name="cuvee" size="4" maxlength="4" />
      &nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Rechercher" name="valid" /><br />
 </form><br />
 

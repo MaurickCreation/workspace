@@ -17,7 +17,6 @@ String libelle = request.getParameter("libelle");
 %>
          <div class="fullcolumn">
     <h1>Notre catalogue de fringues idéales</h1>
-	<p><img width="400" heigth="350" src="../common/images/SA400013.JPG" /></p>
 
         <form name="form1" method="post" action="commande.jsp">
             Article : <select name="code" size="1">
@@ -93,6 +92,7 @@ String libelle = request.getParameter("libelle");
         </table><br /><br />
 
         <a href="javascript:history.back()">Retour</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="enregistrer.html">Enregistrer</a>
+        <p><img width="400" heigth="350" src="../common/images/SA400013.JPG" /></p>
     </div><br />
 
 <jsp:include page="footer.jsp"/>
