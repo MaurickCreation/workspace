@@ -1,0 +1,221 @@
+/* CSS Document */
+
+body {
+	margin-top:20px;
+	margin-left:200px;
+	background:#999999;
+	color:#FFFFCC;
+	}
+img {
+	border:0px;
+	}
+.cadre {
+	border:3px solid #556B2F;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	}
+.wrapper {
+	width:950px;
+	border:1px solid #000000;
+	background:#ffffff;
+	}
+/* This style defines the area behind the logo. */
+.logobkg {
+	background:black;
+	border-bottom:1px solid #666666;
+	height:200px;
+	}
+/* This style defines the area around the navigation bar. This is where the background image for the navigation bar is defines */
+.navbar {
+	position:relative;
+	background:#003399;
+	}
+/* These styles define the buttons in the navigation bar */
+.buttons {
+	margin:0px 0px 0px -16px;
+	padding:0px 15px 0px 16px;
+	font-family:Verdana, sans-serif;
+	font-weight:bold;
+	font-size:.6em;
+	white-space:nowrap;
+	color:#ffffff;
+	}  
+.buttons a {
+	float:left;
+	border-style:none;
+	border-right:1px solid #000000;
+	border-left:1px solid #000000;
+	border-bottom:1px solid #000000;
+	padding:7px 20px;
+	text-decoration:none;
+	color:#ffffff;
+	}  
+.buttons strong {
+	float:left;
+	border-style:none;
+	border-right:1px solid #000000;
+	border-left:1px solid #000000;
+	border-bottom:1px solid #000000;
+	padding:7px 20px;
+	text-decoration:none;
+	background:black;
+	color:#ffffff;
+	}
+.buttons a:hover {
+	background:#556B2F;
+	border-right:1px solid #556B2F;
+	border-left:1px solid #556B2F;
+	border-bottom:1px solid #556B2F;
+	text-decoration:none;
+	}
+.subnav {
+	background:#000066;
+	padding:3px;
+	}
+/* These styles define link behaviors */
+a:link {
+	color:#FFFFCC; text-decoration:none;
+	}	
+a:visited {
+	color:#FFFFCC; text-decoration:none;
+	}	
+a:hover {
+	color:#FFFFCC;text-decoration:none;
+	}
+a:active {
+	color:#FFFFCC;text-decoration:none;
+	} 
+/* These styles define the columns that appear within the body of the page */
+.leftcolumn {
+	width:550px;
+	background:#ffffff;
+	padding:15px 14px 14px 15px;
+	float:left;
+	}
+.rightcolumn {
+	width:160px;
+	background:#ffffff;
+	padding:15px 14px 14px 15px;
+	float:right;
+	}
+.fullcolumn {
+	width:900px;
+	background:#556B2F;
+	padding:30px 25px 14px 25px;
+	}
+/* Heading can be used alone or with Boxbeige and Boxwhite below */
+.erreur {
+	background:red;
+	border:1px solid #cccccc;
+	padding:5px 8px;
+	font-family:Verdana, sans-serif;
+	font-size:.7em;
+	}
+.formlabel {
+    clear: left;
+    float: left;
+    width: 150px;
+    padding-right: 2px;
+    text-align: right;
+}
+/* Boxbeige and Boxwhite should be used with the Heading style above */
+.boxbeige {
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+	border-left:1px solid #cccccc;
+	background:#feffef;
+	padding:8px;
+	font-family:Verdana, sans-serif;
+	font-size:.7em;
+	}
+.boxwhite {
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+	border-left:1px solid #cccccc;
+	background:#ffffff;
+	padding:8px;
+	font-family:Verdana, sans-serif;
+	font-size:.7em;
+	}
+/* These styles define font attributes */
+h1 {
+	font-family:Arial, sans-serif;
+	font-size:1.2em;
+	font-weight:bold;
+	}
+h4 {
+	font-family:Arial, sans-serif;
+	font-size:1em;
+	font-weight:bold;
+	}
+.smltxt {
+	font-family:Verdana, sans-serif;
+	font-size:.6em;
+	}
+p {
+	font-family:Verdana, sans-serif;
+	font-size:.8em;
+	font-weight:normal;
+	text-align:justify;
+	}
+p a:link {
+	text-decoration:underline;
+	}
+p a:visited {
+	text-decoration:underline;
+	}
+/* This style defines the footer */
+.footer {
+	padding:4px 12px;
+	margin:0px;
+	background:#000000;
+	border-top:1px solid #666666;
+	font-family:Verdana, sans-serif;
+	font-size:.6em;
+	color:#666666;
+	clear:both;
+	}
+	
+.outer {
+position:relative;
+padding:4em 0 3em 0;
+width:54em;
+margin:0 auto 3em auto;
+}
+.innera {
+overflow:auto;
+width:54em;
+height:9.6em;
+}
+.outer table caption {
+position:absolute;
+width:51.7em;
+text-align:center;
+top:0;
+left:0;
+height:1.5em;
+background:#697210;
+border:0.1em solid #fff;
+color:#fff;
+}
+.outer thead tr {
+position:absolute;
+top:1.5em;
+height:1.5em;
+left:0;
+}
+.outer tfoot td {
+position:absolute;
+width:51.5em;
+text-align:center;
+background:#f0c992; 
+border:0.1em solid #000;
+color:#000;
+bottom:0;
+left:0
+}
+.outer th, .outer td {
+width:10em; 
+text-align:left;
+}
+
