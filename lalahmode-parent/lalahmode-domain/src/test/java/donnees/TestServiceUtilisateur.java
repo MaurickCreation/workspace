@@ -40,10 +40,8 @@ public class TestServiceUtilisateur extends TestCase{
 		
 		 
 		 ServiceUtilisateur serviceUtilisateur = ServiceUtilisateur.getInstance();
-<<<<<<< HEAD
+
 		 
-=======
->>>>>>> branch 'master' of https://github.com/MaurickCreation/workspace.git
 		 String login = String.valueOf("logintest");
 		 
 		 boolean resultatTest = serviceUtilisateur.isLoginDispo(login);

@@ -77,11 +77,8 @@ public class ServiceUtilisateur {
 			}
 				
 		}
-<<<<<<< HEAD
-		 System.out.println("Jvaleur de authentifie" + authentifie);
-=======
+
 		 System.out.println("valeur de authentifie" + authentifie);
->>>>>>> branch 'master' of https://github.com/MaurickCreation/workspace.git
 		return authentifie;
 	}
 
