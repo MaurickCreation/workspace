@@ -15,6 +15,7 @@
         <mapping resource="src/main/resources/Utilisateur.hbm.xml" />-->
         <mapping class="donnees.Article" />
         <mapping class="donnees.Utilisateur" />
+        <mapping class="donnees.CommandeEntete" />
         
     </session-factory>
 </hibernate-configuration>

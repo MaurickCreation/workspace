@@ -27,7 +27,41 @@ import javax.xml.bind.annotation.XmlRootElement;
 		    @Column(name = "DATE_COMMANDE", nullable = false)
 		private String dateCommande;
 	
-		 @Basic(optional = false)
+		 /**
+		 * @param numCommande
+		 * @param dateCommande
+		 * @param numClient
+		 * @param dateValidation
+		 * @param datelivraison
+		 */
+		public CommandeEntete(Long numCommande, String dateCommande, Long numClient, String dateValidation,
+				String datelivraison) {
+			super();
+			this.numCommande = numCommande;
+			this.dateCommande = dateCommande;
+			this.numClient = numClient;
+			this.dateValidation = dateValidation;
+			this.datelivraison = datelivraison;
+		}
+		
+		public CommandeEntete( String dateCommande, Long numClient, String dateValidation,
+				String datelivraison) {
+			super();
+			this.dateCommande = dateCommande;
+			this.numClient = numClient;
+			this.dateValidation = dateValidation;
+			this.datelivraison = datelivraison;
+		}
+		
+		public CommandeEntete(Long numCommande) {
+
+			this.numCommande = numCommande;
+		}
+		
+		public CommandeEntete() {
+		}
+
+		@Basic(optional = false)
 		    @Column(name = "NUM_CLIENT", nullable = false)
 		private Long numClient;
 		 
