@@ -25,10 +25,7 @@ public class TestCommandeEntete  extends TestCase{
 				 String datelivraison = String.valueOf("201603118");
 	 
 		CommandeEntete commande  = new CommandeEntete(dateCommande, numClient, dateValidation,datelivraison );
-			//session.save(user);
-			
-	 
-			//session.getTransaction().commit();
+		
 			session.close();
 		}
 
