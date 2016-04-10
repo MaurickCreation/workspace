@@ -15,5 +15,6 @@
         
         <mapping class="donnees.Article" />
           <mapping class="donnees.Utilisateur" />
+           <mapping class="donnees.CommandeEntete" />
     </session-factory>
 </hibernate-configuration>

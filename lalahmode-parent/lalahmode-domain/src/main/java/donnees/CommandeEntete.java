@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 		
 		@Id
 		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_numcommande")
-	    @SequenceGenerator(name = "sequence_article", sequenceName = "SEQ_TA_ENTETE_COMMANDE", allocationSize=1)
+	    @SequenceGenerator(name = "sequence_numcommande", sequenceName = "SEQ_TA_ENTETE_COMMANDE", allocationSize=1)
 		@Basic(optional = false)
 		@Column(name = "NUM_COMMANDE", nullable = false)
 		private Long numCommande;

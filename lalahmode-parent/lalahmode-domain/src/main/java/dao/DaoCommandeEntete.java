@@ -34,7 +34,7 @@ public class DaoCommandeEntete {
 		session.close();
 
 	}
-	public List<CommandeEntete> listArticles() {
+	public List<CommandeEntete> listCommandeEntetes() {
 
 	    Session session = HibernateUtil.getSessionFactory().openSession();
 
