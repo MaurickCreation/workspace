@@ -1,25 +1,36 @@
 package dao;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import donnees.Article;
 import donnees.Utilisateur;
 
-import java.math.BigDecimal;
+
 import java.util.List;
 
-import util.HibernateUtil;
 
+@Repository
 public class DaoUtilisateur {
+	
+	  private SessionFactory sessionFactory;
 
 	public DaoUtilisateur() {
 
 	}
+	
+
+
+	    @Autowired
+	    public void setSessionFactory(SessionFactory sessionFactory) {
+	        this.sessionFactory = sessionFactory;
+	    }
 
 	public void createAndStoreArticle(String login, String mdp,
 			String nom, String prenom, String tel, String adresse) {
 
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = this.sessionFactory.openSession();
 
 		session.beginTransaction();
 
@@ -40,7 +51,7 @@ public class DaoUtilisateur {
 	}
 	public List<Utilisateur> listUtilisateurs() {
 
-	    Session session = HibernateUtil.getSessionFactory().openSession();
+	    Session session = this.sessionFactory.openSession();
 
 	    session.beginTransaction();
 
@@ -54,7 +65,7 @@ public class DaoUtilisateur {
 	
 	public List<Utilisateur>  getUtilisateurByLogin (String login){
 		
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = this.sessionFactory.openSession();
 
 	    session.beginTransaction();
 	    List<Utilisateur> result = session.createQuery("from Utilisateur where login = '" + login +"'").list();

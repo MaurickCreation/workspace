@@ -5,7 +5,7 @@ if (session.getAttribute("role").equals("")) {
 %>
   <div class="fullcolumn">
     <h1>Bienvenue sur LalahMode.com</h1>
-    <p> Nous esp&eacute;rons que chacun d'entre vous trouvera son bonheur dans les articles que nous vous proposons fraichemnet arrives des meilleurs ateliersde l'Asie du Sud Est.</p> 
+    <p> Nous esp&eacute;rons que chacun  d'entre vous trouvera son bonheur dans les articles que nous vous proposons fraichement arriv&eacute;s des meilleurs ateliers de l'Asie du Sud Est.</p> 
 	<p> Vous pouvez consultez librement notre catalogue riche et de qualit&eacute;, ou bien vous connecter / inscrire sur la page r&eacute;serv&eacute;e &agrave; cet effet.</p>
 	<p> Toute l'&eacute;quipe de Lalah vous souhaite une agr&eacute;able visite.</p>
 	<div>

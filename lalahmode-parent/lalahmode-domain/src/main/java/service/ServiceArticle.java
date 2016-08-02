@@ -7,6 +7,7 @@ import dao.DaoArticle;
 import donnees.Article;
 
 public class ServiceArticle {
+	
 
 	public ServiceArticle (){
 		
@@ -24,7 +25,7 @@ public class ServiceArticle {
 	public void creerArticle (String codeArt, String libelle,
 			BigDecimal prix, String nomImage){
 		DaoArticle daoArticle = new DaoArticle();
-		daoArticle.createAndStoreArticle(codeArt, libelle, prix, nomImage);
+		daoArticle.persist(o);(codeArt, libelle, prix, nomImage);
 		
 	}
 	

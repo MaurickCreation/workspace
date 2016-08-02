@@ -50,8 +50,8 @@ function control(form){
     } else {
     	if (session.getAttribute("role").equals("admin")) {
     		out.println("<a href=\"accueil.jsp\">Administration</a>");
-    		out.println("<a href=\"etat_cave.jsp\">Etat de la cave</a>");
-    		out.println("<a href=\"saisie.jsp\">Ajouter des bouteilles</a>");
+    		out.println("<a href=\"etat_stocks.jsp\">Etat du stock</a>");
+    		out.println("<a href=\"saisie.jsp\">Gestion des Artciles</a>");
     		out.println("<a href=\"index.jsp\" style=\"float:right\">Deconnexion</a>");
     	} else {
     		out.println("<a href=\"accueil.jsp\">Accueil</a>");

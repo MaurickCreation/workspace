@@ -43,31 +43,20 @@ String libelle = request.getParameter("libelle");
                <thead>
                 <tr>
                     <td>Article</td>
-                    <td>Chateau</td>
-                    <td>Département</td>
-                    <td>Type de bouteilles</td>
-                    <td>Nombre disponible</td>
-                    <td>Quantité voulue</td>
+                    <td>Prix</td>
+                    <td>Description</td>
+           
                 </tr>
                 </thead>
                 <tbody>
+                <%  for(Article tempA : articles){  %>
                 <tr>
-                    <td>Médoc</td>
-                    <td>Chateau toto</td>
-                    <td>33</td>
-                    <td>Supérieur</td>
-                    <td>500</td>
-                    <td><input type="text" name="qtt1" size="3" maxlength="3" /></td>
+                     <%  out.println("<td>" + tempA.getLibelle() + "</td>"); 
+                     out.println("<td>" + tempA.getPrix() + "</td>"); 
+                   out.println("<td>" + tempA.getNomImage() + "</td>"); %>
                 </tr>
-                <tr>
-                    <td>Médoc</td>
-                    <td>Chateau tata</td>
-                    <td>33</td>
-                    <td>Cubi</td>
-                    <td>2000</td>
-                    <td><input type="text" name="qtt2" size="3" maxlength="3" /></td>
-                </tr>
-          
+               
+           <%} %>
                 </tbody>
             </table>
             </div>

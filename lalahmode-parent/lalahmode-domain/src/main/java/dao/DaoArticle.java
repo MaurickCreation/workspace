@@ -6,35 +6,24 @@ import donnees.Article;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
+
+import javax.inject.Named;
 
 import util.HibernateUtil;
 
-public class DaoArticle {
+
+
+
+@Named(value = "articleDao")
+public class DaoArticle implements IDaoArticle {
 
 	public DaoArticle() {
 
 	}
 
-	public void createAndStoreArticle(String codeArt, String libelle,
-			BigDecimal prix, String nomImage) {
+	
 
-		Session session = HibernateUtil.getSessionFactory().openSession();
-
-		session.beginTransaction();
-
-		Article newArticle = new Article();
-		newArticle.setCodeArt(codeArt);
-
-		newArticle.setLibelle(libelle);
-		newArticle.setPrix(prix);
-		newArticle.setNomImage(nomImage);
-
-		session.save(newArticle);
-
-		session.getTransaction().commit();
-		session.close();
-
-	}
 	public List<Article> listArticles() {
 
 	    Session session = HibernateUtil.getSessionFactory().openSession();
@@ -47,5 +36,101 @@ public class DaoArticle {
 	    session.close();
 
 	    return result;
+	}
+
+	@Override
+	public void flush() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void detache(Article o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void refresh(Article o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void persist(Article o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Article merge(Article o) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void remove(Article o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Article find(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Article getReference(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Article> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void lock(Article o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Article> chercheParLibelle(String label) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Article> executeNamedQuery(String queryName, String pParamKey, Object pParamValue) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Article> executeNamedQuery(String queryName, Map<String, Object> parameters) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Article> executeNamedQuery(String queryName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<?> executeStoredProcedure(String queryName, Map<String, Object> parameters) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int executeNamedQueryForUpdate(String queryName, Map<String, Object> parameters) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
