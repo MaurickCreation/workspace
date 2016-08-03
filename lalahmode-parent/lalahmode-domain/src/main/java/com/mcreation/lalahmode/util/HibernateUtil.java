@@ -1,4 +1,4 @@
-package util;
+package com.mcreation.lalahmode.util;
 
 import org.hibernate.*;
 import org.hibernate.cfg.*;
@@ -8,7 +8,7 @@ public class HibernateUtil {
 
     static {
         try {
-            // Création de la SessionFactory à partir de hibernate.cfg.xml
+            // Crï¿½ation de la SessionFactory ï¿½ partir de hibernate.cfg.xml
             sessionFactory = new Configuration().configure().buildSessionFactory();
         } catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed

@@ -6,6 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.mcreation.lalahmode.donnees.CommandeEntete;
+
 import junit.framework.TestCase;
 
 public class TestCommandeEntete  extends TestCase{

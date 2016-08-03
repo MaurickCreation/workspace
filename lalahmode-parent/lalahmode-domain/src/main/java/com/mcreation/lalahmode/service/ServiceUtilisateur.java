@@ -1,14 +1,15 @@
-package service;
+package com.mcreation.lalahmode.service;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 import org.hibernate.Session;
 
+import com.mcreation.lalahmode.dao.DaoUtilisateur;
+import com.mcreation.lalahmode.donnees.Utilisateur;
+import com.mcreation.lalahmode.util.HibernateUtil;
+
 import antlr.StringUtils;
-import util.HibernateUtil;
-import dao.DaoUtilisateur;
-import donnees.Utilisateur;
 
 public class ServiceUtilisateur {
 

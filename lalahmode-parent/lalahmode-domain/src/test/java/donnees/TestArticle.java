@@ -8,7 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import donnees.Article;
+import com.mcreation.lalahmode.donnees.Article;
 
 
 

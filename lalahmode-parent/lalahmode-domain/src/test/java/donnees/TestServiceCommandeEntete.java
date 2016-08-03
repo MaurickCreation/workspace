@@ -1,7 +1,8 @@
 package donnees;
 
 
-import service.ServiceCommandeEntete;
+import com.mcreation.lalahmode.service.ServiceCommandeEntete;
+
 import junit.framework.TestCase;
 
 public class TestServiceCommandeEntete extends TestCase{

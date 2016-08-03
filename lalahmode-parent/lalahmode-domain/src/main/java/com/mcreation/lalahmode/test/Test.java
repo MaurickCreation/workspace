@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test;
+package com.mcreation.lalahmode.test;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;

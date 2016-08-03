@@ -3,7 +3,9 @@ package donnees;
 import java.math.BigDecimal;
 import java.util.List;
 
-import service.ServiceUtilisateur;
+import com.mcreation.lalahmode.donnees.Utilisateur;
+import com.mcreation.lalahmode.service.ServiceUtilisateur;
+
 import junit.framework.TestCase;
 
 public class TestServiceUtilisateur extends TestCase{

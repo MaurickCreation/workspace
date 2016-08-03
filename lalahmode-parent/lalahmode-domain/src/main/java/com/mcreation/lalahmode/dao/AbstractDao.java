@@ -1,4 +1,4 @@
-package dao;
+package com.mcreation.lalahmode.dao;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.Collections;
@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.StoredProcedureQuery;
 
-import dao.IDao;
+import com.mcreation.lalahmode.dao.IDao;
 
 /**
  * Implémentation du DAO générique.
@@ -40,7 +40,7 @@ public abstract class AbstractDao<T, PK> implements IDao<T, PK> {
     }
 
     /** Le gestionnaire d'entités. */
-    @PersistenceContext(name = "persistence/VigiesipPu", unitName = "VigieSipEm")
+    @PersistenceContext(name = "persistence/LalahmodePu", unitName = "LalahmodeEm")
     private EntityManager em;
 
     /** Le type de l'entité de la classe fille. */

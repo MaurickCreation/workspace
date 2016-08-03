@@ -1,10 +1,11 @@
-package service;
+package com.mcreation.lalahmode.service;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-import dao.DaoArticle;
-import donnees.Article;
+import com.mcreation.lalahmode.dao.DaoArticle;
+import com.mcreation.lalahmode.donnees.Article;
+
 
 public class ServiceArticle {
 	
@@ -25,7 +26,8 @@ public class ServiceArticle {
 	public void creerArticle (String codeArt, String libelle,
 			BigDecimal prix, String nomImage){
 		DaoArticle daoArticle = new DaoArticle();
-		daoArticle.persist(o);(codeArt, libelle, prix, nomImage);
+		daoArticle.persist(o);
+		(codeArt, libelle, prix, nomImage);
 		
 	}
 	

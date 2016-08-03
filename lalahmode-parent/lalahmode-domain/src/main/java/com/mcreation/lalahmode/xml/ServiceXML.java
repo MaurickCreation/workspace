@@ -1,4 +1,4 @@
-package xml;
+package com.mcreation.lalahmode.xml;
 import java.io.*;
 import java.net.URL;
 import java.util.*;
@@ -15,7 +15,7 @@ import org.jdom.input.*;
  */
 
 /**
- * Classe permettant de faire les lectures et écritures dans les fichiers XML
+ * Classe permettant de faire les lectures et ï¿½critures dans les fichiers XML
  * @author Groupe de Nicolas,Maurick, Renaud et Benoit
  */
 public class ServiceXML {
@@ -49,9 +49,9 @@ public class ServiceXML {
     }
     
     /**
-     * Lit le fichier XML et le charge en mémoire
+     * Lit le fichier XML et le charge en mï¿½moire
      * @param fichier nom du fichier XML
-     * @throws java.lang.Exception Exception en cas de problème
+     * @throws java.lang.Exception Exception en cas de problï¿½me
      */
     public void lireFichier(String fichier) throws Exception{
     	SAXBuilder sxb = new SAXBuilder();
@@ -62,42 +62,42 @@ public class ServiceXML {
     
 //On fait des modifications sur un Element
     /**
-     * Supprime un élément dans l'arbre
+     * Supprime un ï¿½lï¿½ment dans l'arbre
      * @param r la racine
-     * @param element l'élément à supprimer
+     * @param element l'ï¿½lï¿½ment ï¿½ supprimer
      */
     public void supprElement(String r, String element) {
-        //Dans un premier temps on liste tous les étudiants
+        //Dans un premier temps on liste tous les ï¿½tudiants
         List listElement = racine.getChildren(r);
         Iterator i = listElement.iterator();
-        //On parcours la liste grâce à un iterator
+        //On parcours la liste grï¿½ce ï¿½ un iterator
         while(i.hasNext()) {
             Element courant = (Element)i.next();
-            //Si l'etudiant possède l'Element en question on applique
+            //Si l'etudiant possï¿½de l'Element en question on applique
             //les modifications.
             if(courant.getChild(element)!=null) {
                 //On supprime l'Element en question
                 courant.removeChild(element);
-                //On renomme l'Element père sachant qu'une balise XML n'accepte
-                //ni les espaces ni les caractères spéciaux
-                //"etudiant modifié" devient "etudiant_modifie"
+                //On renomme l'Element pï¿½re sachant qu'une balise XML n'accepte
+                //ni les espaces ni les caractï¿½res spï¿½ciaux
+                //"etudiant modifiï¿½" devient "etudiant_modifie"
                 courant.setName("Element_modifie");
             }
         }
     }
         
     /**
-     * Ajoute un élément à la racine de l'arbre
-     * @param e l'élément à rajouter
+     * Ajoute un ï¿½lï¿½ment ï¿½ la racine de l'arbre
+     * @param e l'ï¿½lï¿½ment ï¿½ rajouter
      */
     public void ajoutRacine(Element e){
         racine.addContent(e);
     }
     
     /**
-     * Ajoute un élément à un autre élément
-     * @param e1 l'élément père
-     * @param e2 l'élément fils
+     * Ajoute un ï¿½lï¿½ment ï¿½ un autre ï¿½lï¿½ment
+     * @param e1 l'ï¿½lï¿½ment pï¿½re
+     * @param e2 l'ï¿½lï¿½ment fils
      */
     public void ajout(Element e1, Element e2){
         e1.addContent(e2);
@@ -120,13 +120,13 @@ public class ServiceXML {
     /**
      * Enregistre l'arbre XML dans le fichier XML
      * @param fichier le nom du fichier XML cible
-     * @throws java.lang.Exception Exception en cas de problèmes
+     * @throws java.lang.Exception Exception en cas de problï¿½mes
      */
     public void enregistre(String fichier) throws Exception{
             //On utilise ici un affichage classique avec getPrettyFormat()
             XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
-            //Remarquez qu'il suffit simplement de créer une instance de FileOutputStream
-            //avec en argument le nom du fichier pour effectuer la sérialisation.
+            //Remarquez qu'il suffit simplement de crï¿½er une instance de FileOutputStream
+            //avec en argument le nom du fichier pour effectuer la sï¿½rialisation.
             sortie.output(document, new FileOutputStream(fichier));
     }
 }

@@ -2,7 +2,8 @@ package donnees;
 
 import java.math.BigDecimal;
 
-import service.ServiceArticle;
+import com.mcreation.lalahmode.service.ServiceArticle;
+
 import junit.framework.TestCase;
 
 public class TestServiceArticle extends TestCase{

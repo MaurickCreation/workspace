@@ -1,13 +1,11 @@
-package dao;
+package com.mcreation.lalahmode.dao;
 
 import org.hibernate.Session;
 
-import donnees.CommandeEntete;
-
+import com.mcreation.lalahmode.donnees.CommandeEntete;
+import com.mcreation.lalahmode.util.HibernateUtil;
 
 import java.util.List;
-
-import util.HibernateUtil;
 
 public class DaoCommandeEntete {
 

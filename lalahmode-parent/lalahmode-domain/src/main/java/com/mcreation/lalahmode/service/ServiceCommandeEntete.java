@@ -1,10 +1,10 @@
-package service;
+package com.mcreation.lalahmode.service;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-import dao.DaoCommandeEntete;
-import donnees.CommandeEntete;
+import com.mcreation.lalahmode.dao.DaoCommandeEntete;
+import com.mcreation.lalahmode.donnees.CommandeEntete;
 
 public class ServiceCommandeEntete {
 
