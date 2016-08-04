@@ -23,7 +23,7 @@ public class DaoArticle implements IDaoArticle {
 
 	}
 
-	
+	//Comprendre pourqoi cela ne marche pas tres bien.
 
 	public List<Article> listArticles() {
 
