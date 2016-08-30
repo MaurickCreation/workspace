@@ -6,11 +6,20 @@ import java.math.BigDecimal;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.mcreation.lalahmode.dao.DaoArticle;
  
 
 @Entity
 @Table(name = "TA_ARTICLE")
 @XmlRootElement
+//@formatter:off
+@NamedQueries({
+    @NamedQuery(name = DaoArticle.CHERCHE_LISTE_ARTICLES, query = "from Article as art "
+        + "where 1 = 1")
+    
+})
+//@formatter:on
 public class Article implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
