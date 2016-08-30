@@ -2,8 +2,8 @@
 <%@page pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
 <%@page import="donnees.*" %>
-<%@page import="donnees.Article"%>
-<%@page import="service.ServiceArticle"%>
+<%@page import="com.mcreation.lalahmode.donnees.Article"%>
+<%@page import="com.mcreation.lalahmode.service.ServiceArticle"%>
 <jsp:include page="header.jsp"/>
 
 <% //récupération des paramètres

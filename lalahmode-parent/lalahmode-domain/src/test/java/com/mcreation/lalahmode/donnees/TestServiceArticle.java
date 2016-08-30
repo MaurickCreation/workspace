@@ -1,6 +1,8 @@
-package donnees;
+package com.mcreation.lalahmode.donnees;
 
 import java.math.BigDecimal;
+
+import org.junit.Test;
 
 import com.mcreation.lalahmode.service.ServiceArticle;
 
@@ -9,6 +11,7 @@ import junit.framework.TestCase;
 public class TestServiceArticle extends TestCase{
 	
 	
+	@Test
 	public void testCreateArticle (){
 		
 		String codeArt = String.valueOf("A02");
@@ -19,6 +22,8 @@ public class TestServiceArticle extends TestCase{
 		 ServiceArticle serviceArticle = new ServiceArticle();
 		 
 		 serviceArticle.creerArticle(codeArt, libelle, prix, nomImage);
+		 
+		 assertEquals("", "");
 		 
 	}
 

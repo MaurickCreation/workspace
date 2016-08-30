@@ -1,4 +1,4 @@
-package donnees;
+package com.mcreation.lalahmode.donnees;
 
 import java.math.BigDecimal;
 

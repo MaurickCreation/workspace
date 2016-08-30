@@ -1,5 +1,5 @@
-<%@page import="service.ServiceCommandeEntete"%>
-<%@page import="donnees.CommandeEntete"%>
+<%@page import="com.mcreation.lalahmode.service.ServiceCommandeEntete"%>
+<%@page import="com.mcreation.lalahmode.donnees.CommandeEntete"%>
 <%@page import="java.util.*"%>
 <jsp:include page="header.jsp"/>
 

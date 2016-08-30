@@ -1,5 +1,5 @@
-<%@page import="donnees.Utilisateur"%>
-<%@page import="service.ServiceUtilisateur"%>
+<%@page import="com.mcreation.lalahmode.donnees.Utilisateur"%>
+<%@page import="com.mcreation.lalahmode.service.ServiceUtilisateur"%>
 <jsp:include page="header.jsp"/>
 
 <% 

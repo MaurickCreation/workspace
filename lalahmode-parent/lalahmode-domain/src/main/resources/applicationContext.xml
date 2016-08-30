@@ -7,12 +7,12 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
 	<context:annotation-config/>
-	<context:component-scan base-package="test"/>
+	<context:component-scan base-package="com.mcreation.lalahmode.test"/>
 		
-	<bean name="testbean2" class="test.Test" scope="prototype">
+	<bean name="testbean2" class="com.mcreation.lalahmode.test.Test" scope="prototype">
 		<property name="test"><value>chaine de test</value></property>
 	</bean>
-	<bean name="personnebean2" class="test.Personne" scope="prototype">
+	<bean name="personnebean2" class="com.mcreation.lalahmode.test.Personne" scope="prototype">
 		<property name="test" ref="testbean"/>
 	</bean>
 	
