@@ -5,11 +5,18 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+<<<<<<< HEAD
 import javax.transaction.Transactional;
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/MaurickCreation/workspace.git
 
 import com.mcreation.lalahmode.dao.IDaoArticle;
 import com.mcreation.lalahmode.donnees.Article;
 
+
+@Named
 
 @Named
 @Transactional
